@@ -13,7 +13,7 @@ public class Cat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private int eloRating;
+    private double eloRating;
     private String photo; 
 
     public Cat() {}
@@ -39,12 +39,12 @@ public class Cat {
         this.name = name;
     }
 
-    public int getEloRating() {
+    public double getEloRating() {
         return eloRating;
     }
 
-    public void setEloRating(int eloRating) {
-        this.eloRating = eloRating;
+    public void setEloRating(double d) {
+        this.eloRating = d;
     }
 
     public String getPhoto(){

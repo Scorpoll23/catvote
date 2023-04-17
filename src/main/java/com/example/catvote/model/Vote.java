@@ -12,15 +12,13 @@ public class Vote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long cat_id_1;
-    private Long cat_id_2;
+    private Long loser_id;
     private Long winner_id;
 
     public Vote() {}
 
-    public Vote(Long cat_id_1, Long cat_id_2, Long winner_id) {
-        this.cat_id_1 = cat_id_1;
-        this.cat_id_2 = cat_id_2;
+    public Vote(Long loser_id, Long winner_id) {
+        this.loser_id = loser_id;
         this.winner_id = winner_id;
     }
 
@@ -32,20 +30,12 @@ public class Vote {
         this.id = id;
     }
 
-    public Long getCat_id_1() {
-        return cat_id_1;
+    public Long getLoser_id() {
+        return loser_id;
     }
 
-    public void setCat_id_1(Long cat_id_1) {
-        this.cat_id_1 = cat_id_1;
-    }
-
-    public Long getCat_id_2() {
-        return cat_id_2;
-    }
-
-    public void setCat_id_2(Long cat_id_2) {
-        this.cat_id_2 = cat_id_2;
+    public void setLoser_id(Long loser_id) {
+        this.loser_id = loser_id;
     }
 
     public Long getWinner_id() {
