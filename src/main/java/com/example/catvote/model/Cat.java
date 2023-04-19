@@ -14,13 +14,13 @@ public class Cat {
     private Long id;
     private String name;
     private double eloRating;
-    private String photo; 
+    private String photoUrl; 
 
     public Cat() {}
 
-    public Cat(String name, int eloRating) {
+    public Cat(String name, String photoUrl) {
         this.name = name;
-        this.eloRating = eloRating;
+        this.eloRating = 1200;
     }
 
     public Long getId() {
@@ -47,11 +47,11 @@ public class Cat {
         this.eloRating = d;
     }
 
-    public String getPhoto(){
-        return photo; 
+    public String getPhotoUrl(){
+        return photoUrl; 
     }
 
-    public void setPhoto(String photo){
-        this.photo = photo; 
+    public void setPhotoUrl(String photoUrl){
+        this.photoUrl = photoUrl; 
     }
 }
