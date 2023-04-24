@@ -1,9 +1,9 @@
 package com.example.catvote.model;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -12,6 +12,7 @@ public class Cat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
     private double eloRating;
     private String photoUrl; 
@@ -20,6 +21,7 @@ public class Cat {
 
     public Cat(String name, String photoUrl) {
         this.name = name;
+        this.photoUrl = photoUrl; 
         this.eloRating = 1200;
     }
 
