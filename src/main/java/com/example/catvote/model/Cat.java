@@ -10,9 +10,8 @@ import javax.persistence.Table;
 @Table(name = "cat")
 public class Cat {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String name;
     private double eloRating;
     private String photoUrl; 
@@ -25,11 +24,11 @@ public class Cat {
         this.eloRating = 1200;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

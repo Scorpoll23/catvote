@@ -189,8 +189,8 @@ public class CatRepositoryImpl implements CatRepository {
 
     @Override
     public <S extends Cat> S save(S entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        entityManager.persist(entity);
+        return entity;
     }
 
     @Override
@@ -234,5 +234,6 @@ public class CatRepositoryImpl implements CatRepository {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findOne'");
     }
+
 }
 
