@@ -25,7 +25,7 @@ public class CatFormController {
 
     @PostMapping("/cats/new")
     public String addCat(@ModelAttribute CatForm catForm) {
-        Cat cat = new Cat(catForm.getName(), catForm.getPhotoUrl());
+        Cat cat = new Cat(catForm.getName(), catForm.getPhoto_Url());
         catRepository.save(cat);
         return "redirect:/cats/new";
     }

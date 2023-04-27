@@ -1,8 +1,9 @@
 CREATE TABLE cat (
-  id INT PRIMARY KEY,
+  id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255),
-  photo VARCHAR(255),
-  elo_rating INT
+  photo_url VARCHAR(255),
+  elo_rating INT,
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE vote (

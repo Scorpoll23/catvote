@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Pair</title>
+</head>
+<body>
+    <h1>Cat Pair</h1>
+    <div>
+        <h2>Cat 1</h2>
+        <p>Name: <span th:text="${cat1.name}"></span></p>
+        <img th:src="@{|cats/${cat1.photo_Url}|}" alt="Cat 1">
+    </div>
+    <div>
+        <h2>Cat 2</h2>
+        <p>Name: <span th:text="${cat2.name}"></span></p>
+        <img th:src="@{|cats/${cat2.photo_Url}|}" alt="Cat 2">
+    </div>
+</body>
+</html>

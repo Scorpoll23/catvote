@@ -20,14 +20,14 @@ public class EloCalculator {
         Cat winner = catRepository.findById(winnerId).orElseThrow(() -> new NoSuchElementException("Cat not found with ID: " + winnerId));
         Cat loser = catRepository.findById(loserId).orElseThrow(() -> new NoSuchElementException("Cat not found with ID: " + loserId));
         
-        double winnerRating = winner.getEloRating();
-        double loserRating = loser.getEloRating();
+        double winnerRating = winner.getElo_Rating();
+        double loserRating = loser.getElo_Rating();
         
         double winnerExpectedScore = 1.0 / (1.0 + Math.pow(10.0, (loserRating - winnerRating) / 400.0));
         double loserExpectedScore = 1.0 / (1.0 + Math.pow(10.0, (winnerRating - loserRating) / 400.0));
         
-        winner.setEloRating(winnerRating + K_FACTOR * (1.0 - winnerExpectedScore));
-        loser.setEloRating(loserRating + K_FACTOR * (0.0 - loserExpectedScore));
+        winner.setElo_Rating(winnerRating + K_FACTOR * (1.0 - winnerExpectedScore));
+        loser.setElo_Rating(loserRating + K_FACTOR * (0.0 - loserExpectedScore));
         
         catRepository.save(winner);
         catRepository.save(loser);

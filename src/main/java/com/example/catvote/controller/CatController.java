@@ -29,7 +29,7 @@ public class CatController {
 
     @GetMapping("/")
     public ModelAndView showCatPair() {
-        ModelAndView mav = new ModelAndView("cat_pair");
+        ModelAndView mav = new ModelAndView("cat-pair");
         List<Cat> catPair = catRepository.getRandomCatPair();
         mav.addObject("cat1", catPair.get(0));
         mav.addObject("cat2", catPair.get(1));

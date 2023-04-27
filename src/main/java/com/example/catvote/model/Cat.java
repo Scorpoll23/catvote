@@ -13,15 +13,15 @@ public class Cat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    private double eloRating;
-    private String photoUrl; 
+    private double elo_Rating;
+    private String photo_Url; 
 
     public Cat() {}
 
-    public Cat(String name, String photoUrl) {
+    public Cat(String name, String photo_Url) {
         this.name = name;
-        this.photoUrl = photoUrl; 
-        this.eloRating = 1200;
+        this.photo_Url = photo_Url; 
+        this.elo_Rating = 1200;
     }
 
     public int getId() {
@@ -40,19 +40,19 @@ public class Cat {
         this.name = name;
     }
 
-    public double getEloRating() {
-        return eloRating;
+    public double getElo_Rating() {
+        return elo_Rating;
     }
 
-    public void setEloRating(double d) {
-        this.eloRating = d;
+    public void setElo_Rating(double d) {
+        this.elo_Rating = d;
     }
 
-    public String getPhotoUrl(){
-        return photoUrl; 
+    public String getPhoto_Url(){
+        return photo_Url; 
     }
 
-    public void setPhotoUrl(String photoUrl){
-        this.photoUrl = photoUrl; 
+    public void setPhoto_Url(String photo_Url){
+        this.photo_Url = photo_Url; 
     }
 }

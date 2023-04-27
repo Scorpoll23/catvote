@@ -2,7 +2,7 @@ package com.example.catvote.model;
 
 public class CatForm {
     private String name;
-    private String photoUrl;
+    private String photo_Url;
 
     public String getName() {
         return name;
@@ -12,12 +12,12 @@ public class CatForm {
         this.name = name;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getPhoto_Url() {
+        return photo_Url;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setPhoto_Url(String photo_Url) {
+        this.photo_Url = photo_Url;
     }
 }
 
