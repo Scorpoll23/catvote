@@ -135,9 +135,11 @@ public class CatRepositoryImpl implements CatRepository {
 
     @Override
     public <S extends Cat> List<S> saveAll(Iterable<S> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAll'");
-    }
+        List<S> savedEntities = new ArrayList<>();
+        entities.forEach(entity -> savedEntities.add(entityManager.merge(entity)));
+        return savedEntities;
+}
+
 
     @Override
     public long count() {
@@ -183,8 +185,8 @@ public class CatRepositoryImpl implements CatRepository {
 
     @Override
     public Optional<Cat> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+        Cat cat = entityManager.find(Cat.class, id);
+        return Optional.ofNullable(cat);
     }
 
     @Override

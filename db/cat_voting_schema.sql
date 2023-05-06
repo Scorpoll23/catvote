@@ -7,10 +7,11 @@ CREATE TABLE cat (
 );
 
 CREATE TABLE vote (
-  id INT PRIMARY KEY,
+  id INT NOT NULL AUTO_INCREMENT,
   winner_id INT,
   loser_id INT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (winner_id) REFERENCES cat(id),
-  FOREIGN KEY (loser_id) REFERENCES cat(id)
+  FOREIGN KEY (loser_id) REFERENCES cat(id),
+  PRIMARY KEY (id)
 );

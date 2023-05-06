@@ -1,6 +1,8 @@
 package com.example.catvote.controller;
 
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,6 +45,8 @@ public class CatController {
         Cat loser = catRepository.findById(loserId).get();
         eloCalculator.updateRating(winnerId, loserId);
         Vote vote = new Vote(winnerId, loserId);
+        Random random = new Random();
+        vote.setId(random.nextInt());
         voteRepository.save(vote);
         catRepository.saveAll(List.of(winner, loser));
         return new ModelAndView("redirect:/");

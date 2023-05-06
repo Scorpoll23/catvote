@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Vote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private Long loser_id;
     private Long winner_id;
 
@@ -22,11 +22,11 @@ public class Vote {
         this.winner_id = winner_id;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

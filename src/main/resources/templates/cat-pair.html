@@ -10,12 +10,21 @@
         <h2>Cat 1</h2>
         <p>Name: <span th:text="${cat1.name}"></span></p>
         <img th:src="@{|/images/cats/${cat1.photo_Url}|}" alt="Cat 1">
+        <form th:action="@{/vote}" method="post">
+            <input type="hidden" name="winnerId" th:value="${cat1.id}" />
+            <input type="hidden" name="loserId" th:value="${cat2.id}" />
+            <button type="submit">Vote for Cat 1</button>
+        </form>
     </div>
     <div>
         <h2>Cat 2</h2>
         <p>Name: <span th:text="${cat2.name}"></span></p>
         <img th:src="@{|/images/cats/${cat2.photo_Url}|}" alt="Cat 2">
+        <form th:action="@{/vote}" method="post">
+            <input type="hidden" name="winnerId" th:value="${cat2.id}" />
+            <input type="hidden" name="loserId" th:value="${cat1.id}" />
+            <button type="submit">Vote for Cat 2</button>
+        </form>
     </div>
-    <img src="file:///E:/Spring Projects/catvote/cats/1.jpg">
 </body>
 </html>
