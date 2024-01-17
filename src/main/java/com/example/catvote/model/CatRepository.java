@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface CatRepository extends JpaRepository<Cat, Long> {
 
     List<Cat> getRandomCatPair();
+
+    List<Cat> findTopCats(int count);
 }

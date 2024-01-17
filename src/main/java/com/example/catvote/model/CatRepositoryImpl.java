@@ -30,6 +30,27 @@ public class CatRepositoryImpl implements CatRepository {
     }
 
     @Override
+    public List<Cat> findTopCats(int count) {
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Cat> criteriaQuery = criteriaBuilder.createQuery(Cat.class);
+        Root<Cat> root = criteriaQuery.from(Cat.class);
+    
+        // Order by elo_rating in descending order
+        criteriaQuery.orderBy(criteriaBuilder.desc(root.get("elo_Rating")));
+    
+        // Select the top N cats
+        List<Cat> topCats = entityManager.createQuery(criteriaQuery)
+                                         .setMaxResults(count)
+                                         .getResultList();
+    
+        if (topCats.size() < count) {
+            throw new NoSuchElementException("Not enough cats in the database");
+        }
+    
+        return topCats;
+    }
+
+    @Override
     public List<Cat> getRandomCatPair() {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Cat> criteriaQuery = criteriaBuilder.createQuery(Cat.class);
@@ -236,6 +257,8 @@ public class CatRepositoryImpl implements CatRepository {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findOne'");
     }
+
+    
 
 }
 

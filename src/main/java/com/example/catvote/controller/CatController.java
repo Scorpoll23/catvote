@@ -2,7 +2,6 @@ package com.example.catvote.controller;
 
 import java.util.List;
 import java.util.Random;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,8 +49,15 @@ public class CatController {
         voteRepository.save(vote);
         catRepository.saveAll(List.of(winner, loser));
         return new ModelAndView("redirect:/");
-    }
+    }   
 
+    @GetMapping("/cats")
+    public ModelAndView showCatRanks() {
+        ModelAndView mav = new ModelAndView("cat-ranks");
+        List<Cat> catRanks = catRepository.findTopCats(3);
+        mav.addObject("catRanks", catRanks);
+        return mav;
+    }
     
 }
 

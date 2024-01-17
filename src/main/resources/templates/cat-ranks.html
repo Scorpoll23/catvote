@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat Rankings</title>
+</head>
+<body>
+    <h1>Cat Rankings</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Elo</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over the list of cats -->
+            <tr th:each="cat : ${catRanks}">
+                <td th:text="${cat.id}"></td>
+                <td th:text="${cat.name}"></td>
+                <td th:text="${cat.elo_Rating}"></td>
+                <!-- Add more columns as needed -->
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
